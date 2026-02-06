@@ -783,19 +783,66 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Person",
+      "@id": "https://myjapanesenametranslator.com/#danielsato",
+      "name": "Daniel Sato",
+      "givenName": "Daniel",
+      "familyName": "Sato",
+      "jobTitle": "Japanese Linguistics Expert & Name Translation Specialist",
+      "description": "Developer and Japanese linguist specializing in English to Japanese name conversion using culturally accurate kanji, katakana, and hiragana transliteration methods.",
+      "knowsLanguage": ["en", "ja"],
+      "knowsAbout": [
+        {
+          "@type": "Thing",
+          "name": "Japanese language",
+          "sameAs": "https://en.wikipedia.org/wiki/Japanese_language"
+        },
+        {
+          "@type": "Thing",
+          "name": "Katakana",
+          "sameAs": "https://en.wikipedia.org/wiki/Katakana"
+        },
+        {
+          "@type": "Thing",
+          "name": "Japanese names",
+          "sameAs": "https://en.wikipedia.org/wiki/Japanese_name"
+        },
+        {
+          "@type": "Thing",
+          "name": "Transliteration",
+          "sameAs": "https://en.wikipedia.org/wiki/Transliteration"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/daniel-sato-japanese/",
+        "https://github.com/DanielJapanese",
+        "https://www.pinterest.com/Danielsatojapanese/",
+        "https://bsky.app/profile/danielsatojapanese.bsky.social",
+        "https://linktr.ee/danielsatojapanese"
+      ],
+      "worksFor": {
+        "@id": "https://myjapanesenametranslator.com/#organization"
+      }
+    },
+    {
       "@type": "Organization",
       "@id": "https://myjapanesenametranslator.com/#organization",
       "name": "My Japanese Name Translator",
+      "alternateName": ["MJNT", "Japanese Name Translator"],
       "url": "https://myjapanesenametranslator.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png"
+        "url": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
+        "width": 512,
+        "height": 512
       },
+      "image": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
       "founder": {
-        "@type": "Person",
-        "name": "Daniel Sato",
-        "jobTitle": "Japanese Linguistics Expert & Name Translation Specialist"
+        "@id": "https://myjapanesenametranslator.com/#danielsato"
       },
+      "foundingDate": "2026",
+      "areaServed": "Worldwide",
+      "slogan": "Translate Your Name in Japanese",
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "contact@myjapanesenametranslator.com",
@@ -808,16 +855,50 @@
         "addressLocality": "Stockton",
         "addressRegion": "CA",
         "addressCountry": "US"
-      }
+      },
+      "sameAs": [
+        "https://github.com/DanielJapanese",
+        "https://www.pinterest.com/Danielsatojapanese/",
+        "https://www.linkedin.com/in/daniel-sato-japanese/",
+        "https://bsky.app/profile/danielsatojapanese.bsky.social",
+        "https://linktr.ee/danielsatojapanese",
+        "https://app.raindrop.io/my/66496713"
+      ],
+      "knowsAbout": [
+        {
+          "@type": "Thing",
+          "name": "Japanese writing system",
+          "sameAs": "https://en.wikipedia.org/wiki/Japanese_writing_system"
+        },
+        {
+          "@type": "Thing",
+          "name": "Name translation",
+          "sameAs": "https://en.wikipedia.org/wiki/Transcription_(linguistics)"
+        }
+      ]
     },
     {
       "@type": "WebSite",
       "@id": "https://myjapanesenametranslator.com/#website",
       "url": "https://myjapanesenametranslator.com/",
       "name": "My Japanese Name Translator",
+      "alternateName": "Japanese Name Converter",
       "description": "Free Japanese name converter tool. Instantly convert your English name to authentic Katakana (カタカナ), Hiragana (ひらがな), and Kanji (漢字) with pronunciation guides and cultural meanings.",
       "inLanguage": "en",
-      "publisher": { "@id": "https://myjapanesenametranslator.com/#organization" }
+      "publisher": {
+        "@id": "https://myjapanesenametranslator.com/#organization"
+      },
+      "creator": {
+        "@id": "https://myjapanesenametranslator.com/#danielsato"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://myjapanesenametranslator.com/?name={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     },
     {
       "@type": "WebPage",
@@ -825,14 +906,20 @@
       "url": "https://myjapanesenametranslator.com/",
       "name": "Japanese Name Translator | Convert Your Name to Katakana, Hiragana & Kanji",
       "description": "Free Japanese name converter tool. Instantly convert your English name to authentic Katakana, Hiragana, and Kanji with pronunciation guides and cultural meanings.",
-      "isPartOf": { "@id": "https://myjapanesenametranslator.com/#website" },
+      "isPartOf": {
+        "@id": "https://myjapanesenametranslator.com/#website"
+      },
       "inLanguage": "en",
       "datePublished": "2026-01-01",
-      "dateModified": "2026-02-05",
+      "dateModified": "2026-02-06",
+      "author": {
+        "@id": "https://myjapanesenametranslator.com/#danielsato"
+      },
       "about": [
         {
           "@type": "Thing",
           "name": "Katakana",
+          "description": "Angular script for foreign names, loanwords & emphasis. The standard way to write non-Japanese names.",
           "sameAs": [
             "https://en.wikipedia.org/wiki/Katakana",
             "https://www.wikidata.org/wiki/Q82946"
@@ -841,6 +928,7 @@
         {
           "@type": "Thing",
           "name": "Hiragana",
+          "description": "Curved, flowing script for native Japanese words, grammar particles, and furigana pronunciation guides.",
           "sameAs": [
             "https://en.wikipedia.org/wiki/Hiragana",
             "https://www.wikidata.org/wiki/Q82990"
@@ -849,6 +937,7 @@
         {
           "@type": "Thing",
           "name": "Kanji",
+          "description": "Logographic characters from Chinese. Each carries meaning — used for Japanese names and core vocabulary.",
           "sameAs": [
             "https://en.wikipedia.org/wiki/Kanji",
             "https://www.wikidata.org/wiki/Q82972"
@@ -857,10 +946,23 @@
         {
           "@type": "Thing",
           "name": "Romaji",
+          "description": "Romanization of Japanese language",
           "sameAs": [
             "https://en.wikipedia.org/wiki/Romanization_of_Japanese",
             "https://www.wikidata.org/wiki/Q1057059"
           ]
+        },
+        {
+          "@type": "Thing",
+          "name": "Ateji",
+          "description": "Kanji characters selected for their phonetic readings rather than semantic meaning",
+          "sameAs": "https://en.wikipedia.org/wiki/Ateji"
+        },
+        {
+          "@type": "Thing",
+          "name": "Hepburn romanization",
+          "description": "The most widely used system for romanizing Japanese",
+          "sameAs": "https://en.wikipedia.org/wiki/Hepburn_romanization"
         }
       ],
       "mentions": [
@@ -873,20 +975,79 @@
           "@type": "Thing",
           "name": "Japanese calligraphy",
           "sameAs": "https://en.wikipedia.org/wiki/Japanese_calligraphy"
+        },
+        {
+          "@type": "Thing",
+          "name": "Japanese names",
+          "sameAs": "https://en.wikipedia.org/wiki/Japanese_name"
+        },
+        {
+          "@type": "Thing",
+          "name": "Japanese phonology",
+          "sameAs": "https://en.wikipedia.org/wiki/Japanese_phonology"
+        },
+        {
+          "@type": "Thing",
+          "name": "Mora (linguistics)",
+          "sameAs": "https://en.wikipedia.org/wiki/Mora_(linguistics)"
+        },
+        {
+          "@type": "Thing",
+          "name": "Hanko",
+          "description": "Japanese personal seal or stamp",
+          "sameAs": "https://en.wikipedia.org/wiki/Seal_(East_Asia)"
+        },
+        {
+          "@type": "Thing",
+          "name": "Meishi",
+          "description": "Japanese business cards",
+          "sameAs": "https://en.wikipedia.org/wiki/Business_card#Japan"
         }
       ],
-      "mainEntity": { "@id": "https://myjapanesenametranslator.com/#converter" }
+      "mainEntity": {
+        "@id": "https://myjapanesenametranslator.com/#converter"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".result-japanese", ".result-romaji"]
+      },
+      "breadcrumb": {
+        "@id": "https://myjapanesenametranslator.com/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://myjapanesenametranslator.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://myjapanesenametranslator.com/"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
       "@id": "https://myjapanesenametranslator.com/#converter",
       "name": "My Japanese Name Translator",
-      "alternateName": ["Japanese Name Converter", "English to Japanese Name Translator", "Katakana Name Generator"],
+      "alternateName": [
+        "Japanese Name Converter",
+        "English to Japanese Name Translator",
+        "Katakana Name Generator",
+        "Hiragana Name Converter",
+        "Kanji Name Translator"
+      ],
       "applicationCategory": "UtilitiesApplication",
-      "applicationSubCategory": "Name Converter Tool",
       "operatingSystem": "All",
       "url": "https://myjapanesenametranslator.com/",
-      "description": "Instantly convert English names to Japanese Katakana, Hiragana, and Kanji (ateji), with romaji pronunciation output and copy-to-clipboard actions.",
+      "description": "Convert your English name into Katakana, Hiragana, or Kanji with pronunciation and cultural context using standard Hepburn romanization rules.",
+      "author": {
+        "@id": "https://myjapanesenametranslator.com/#danielsato"
+      },
+      "provider": {
+        "@id": "https://myjapanesenametranslator.com/#organization"
+      },
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -894,19 +1055,162 @@
         "availability": "https://schema.org/InStock"
       },
       "featureList": [
-        "Japanese Name conversion",
         "English to Katakana conversion",
         "English to Hiragana conversion",
         "English to Kanji (ateji) conversion",
         "Romaji pronunciation output",
-        "Copy to clipboard",
-        "Popular name conversions",
+        "Copy to clipboard functionality",
+        "Popular name conversions database",
         "Instant real-time conversion",
-        "Mobile-friendly interface"
+        "Mobile-friendly responsive interface",
+        "Script toggle selection"
       ],
       "softwareHelp": {
         "@type": "CreativeWork",
-        "url": "https://myjapanesenametranslator.com/#how-it-works"
+        "url": "https://myjapanesenametranslator.com/#how-it-works",
+        "name": "How the Japanese Name Converter Works"
+      },
+      "relatedLink": [
+        "https://chatgpt.com/g/g-6985a28a3f7c819184fa0e5ca1ef878a-japanese-name-translator-kanji",
+        "https://chatgpt.com/g/g-6985a3eabe248191b54f0b4e03fad483-japanese-name-converter-hiragana"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://myjapanesenametranslator.com/#sourcecode",
+      "name": "Kanji Japanese Name Converter",
+      "description": "Open source Japanese name conversion algorithm using phonetic transliteration",
+      "codeRepository": "https://github.com/DanielJapanese/kanji-japanese-name-converter",
+      "programmingLanguage": ["JavaScript", "TypeScript"],
+      "author": {
+        "@id": "https://myjapanesenametranslator.com/#danielsato"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://myjapanesenametranslator.com/#popular-female-names",
+      "name": "Popular Female Japanese Name Conversions",
+      "description": "Common female English names converted to Japanese katakana",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Emma - エマ"},
+        {"@type": "ListItem", "position": 2, "name": "Sophia - ソフィア"},
+        {"@type": "ListItem", "position": 3, "name": "Charlotte - シャーロット"},
+        {"@type": "ListItem", "position": 4, "name": "Isabella - イザベラ"},
+        {"@type": "ListItem", "position": 5, "name": "Mia - ミア"},
+        {"@type": "ListItem", "position": 6, "name": "Emily - エミリー"},
+        {"@type": "ListItem", "position": 7, "name": "Grace - グレース"},
+        {"@type": "ListItem", "position": 8, "name": "Luna - ルナ"}
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://myjapanesenametranslator.com/#popular-male-names",
+      "name": "Popular Male Japanese Name Conversions",
+      "description": "Common male English names converted to Japanese katakana",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Liam - リアム"},
+        {"@type": "ListItem", "position": 2, "name": "Oliver - オリバー"},
+        {"@type": "ListItem", "position": 3, "name": "James - ジェームズ"},
+        {"@type": "ListItem", "position": 4, "name": "Alexander - アレクサンダー"},
+        {"@type": "ListItem", "position": 5, "name": "William - ウィリアム"},
+        {"@type": "ListItem", "position": 6, "name": "Noah - ノア"},
+        {"@type": "ListItem", "position": 7, "name": "Daniel - ダニエル"},
+        {"@type": "ListItem", "position": 8, "name": "Benjamin - ベンジャミン"}
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://myjapanesenametranslator.com/#resources",
+      "name": "Japanese Name Translation Resources",
+      "description": "Curated resources for Japanese name translation and learning",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "WebPage",
+            "name": "Daniel Sato Japanese Resources Collection",
+            "url": "https://app.raindrop.io/my/66496713"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "WebPage",
+            "name": "Japanese Name Inspiration Board",
+            "url": "https://www.pinterest.com/Danielsatojapanese/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "WebPage",
+            "name": "Japanese Calligraphy Pin",
+            "url": "https://www.pinterest.com/pin/1126533294307539066/"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://myjapanesenametranslator.com/#service",
+      "name": "Japanese Name Translation Service",
+      "description": "Free online service for converting English names to Japanese writing systems including Katakana, Hiragana, and Kanji with cultural accuracy using Hepburn romanization",
+      "serviceType": "Name Translation",
+      "provider": {
+        "@id": "https://myjapanesenametranslator.com/#organization"
+      },
+      "areaServed": "Worldwide",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://myjapanesenametranslator.com/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Name Translation Options",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Katakana Name Conversion",
+              "description": "Convert English names to Japanese Katakana script"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Hiragana Name Conversion",
+              "description": "Convert English names to Japanese Hiragana script"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Kanji (Ateji) Name Conversion",
+              "description": "Convert English names to Japanese Kanji using phonetic ateji"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Romaji Pronunciation Guide",
+              "description": "Provide romanized pronunciation of Japanese name conversions"
+            }
+          }
+        ]
       }
     }
   ]
@@ -924,7 +1228,7 @@
       "name": "How do I write my name in Japanese?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Foreign names are written in Katakana in Japan. Enter your name in the converter to get your name in Katakana, Hiragana, and Kanji. Katakana is the standard script used for foreign names on many Japanese documents."
+        "text": "Foreign names are written in Katakana in Japan. Enter your name in our converter above, and you'll receive your name in Katakana, Hiragana, and Kanji. Katakana is the officially recognized script for foreign names in Japanese documents, passports, and official records."
       }
     },
     {
@@ -932,7 +1236,7 @@
       "name": "What is the difference between Katakana, Hiragana, and Kanji?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Katakana (カタカナ) is commonly used for foreign words and names. Hiragana (ひらがな) is used for native Japanese words and grammar. Kanji (漢字) are logographic characters that carry meaning and are used throughout Japanese writing, including Japanese names."
+        "text": "Katakana (カタカナ) uses angular strokes and is for foreign words and names. Hiragana (ひらがな) uses curved strokes for native Japanese words and grammar. Kanji (漢字) are logographic characters from Chinese, each representing a meaning. For foreign names, Katakana is the standard and most appropriate choice."
       }
     },
     {
@@ -940,7 +1244,7 @@
       "name": "Is this Japanese name converter accurate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The converter uses phonetic transliteration rules to map your name to natural-sounding Japanese. For common names it can use established conversions, and for uncommon names it applies phonetic mapping to produce a close equivalent."
+        "text": "Our converter uses standard phonetic transliteration rules based on Hepburn romanization, the most widely used system in Japan. For common English names, we use a verified database of established conversions. For less common names, our algorithm applies Japanese phonetic mapping rules to produce the closest natural-sounding equivalent."
       }
     },
     {
@@ -948,7 +1252,7 @@
       "name": "Can I use the Kanji version for a tattoo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Kanji output uses ateji—characters chosen for sound rather than meaning. If you want a permanent tattoo, it's smart to confirm the result with a native Japanese speaker. Katakana is typically the safest option for foreign names."
+        "text": "The Kanji output uses ateji — characters chosen for sound rather than meaning. While visually striking, we recommend consulting a native Japanese speaker or professional calligrapher before getting a permanent kanji tattoo, to ensure the character combination is appropriate and culturally respectful. Katakana is always a safe and authentic choice for foreign name tattoos."
       }
     },
     {
@@ -956,7 +1260,7 @@
       "name": "Does this work for names from other languages?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. It can handle many names written in the Latin alphabet by converting their phonetic structure into Japanese."
+        "text": "Yes! Our tool works as an English to Japanese name converter, and can also handle names from Spanish, French, German, Korean, Chinese, and other languages that use the Latin alphabet. The converter analyzes the phonetic structure of your name regardless of its origin language."
       }
     },
     {
@@ -964,7 +1268,7 @@
       "name": "Why does my name sound different in Japanese?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Japanese phonetics differ from English—some sounds don't exist and most syllables end in a vowel or 'n'. Consonant clusters are split with vowels, which changes how names are pronounced."
+        "text": "Japanese phonetics don't include certain English sounds. There is no 'L' sound (it becomes 'R'), no 'V' (becomes 'B'), and most syllables must end in a vowel or 'n.' Consonant clusters are separated with vowels. This is why 'Clark' becomes クラーク (Ku-rā-ku) — each consonant gets a vowel companion to fit Japanese mora structure."
       }
     }
   ]

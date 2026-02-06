@@ -37,19 +37,66 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Person",
+          "@id": "https://myjapanesenametranslator.com/#danielsato",
+          "name": "Daniel Sato",
+          "givenName": "Daniel",
+          "familyName": "Sato",
+          "jobTitle": "Japanese Linguistics Expert & Name Translation Specialist",
+          "description": "Developer and Japanese linguist specializing in English to Japanese name conversion using culturally accurate kanji, katakana, and hiragana transliteration methods.",
+          "knowsLanguage": ["en", "ja"],
+          "knowsAbout": [
+            {
+              "@type": "Thing",
+              "name": "Japanese language",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_language"
+            },
+            {
+              "@type": "Thing",
+              "name": "Katakana",
+              "sameAs": "https://en.wikipedia.org/wiki/Katakana"
+            },
+            {
+              "@type": "Thing",
+              "name": "Japanese names",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_name"
+            },
+            {
+              "@type": "Thing",
+              "name": "Transliteration",
+              "sameAs": "https://en.wikipedia.org/wiki/Transliteration"
+            }
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/daniel-sato-japanese/",
+            "https://github.com/DanielJapanese",
+            "https://www.pinterest.com/Danielsatojapanese/",
+            "https://bsky.app/profile/danielsatojapanese.bsky.social",
+            "https://linktr.ee/danielsatojapanese"
+          ],
+          "worksFor": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          }
+        },
+        {
           "@type": "Organization",
           "@id": "https://myjapanesenametranslator.com/#organization",
           "name": "My Japanese Name Translator",
+          "alternateName": ["MJNT", "Japanese Name Translator"],
           "url": "https://myjapanesenametranslator.com/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png"
+            "url": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
+            "width": 512,
+            "height": 512
           },
+          "image": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
           "founder": {
-            "@type": "Person",
-            "name": "Daniel Sato",
-            "jobTitle": "Japanese Linguistics Expert & Name Translation Specialist"
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
           },
+          "foundingDate": "2026",
+          "areaServed": "Worldwide",
+          "slogan": "Translate Your Name in Japanese",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "contact@myjapanesenametranslator.com",
@@ -62,24 +109,65 @@
             "addressLocality": "Stockton",
             "addressRegion": "CA",
             "addressCountry": "US"
-          }
+          },
+          "sameAs": [
+            "https://github.com/DanielJapanese",
+            "https://www.pinterest.com/Danielsatojapanese/",
+            "https://www.linkedin.com/in/daniel-sato-japanese/",
+            "https://bsky.app/profile/danielsatojapanese.bsky.social",
+            "https://linktr.ee/danielsatojapanese",
+            "https://app.raindrop.io/my/66496713"
+          ],
+          "knowsAbout": [
+            {
+              "@type": "Thing",
+              "name": "Japanese writing system",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_writing_system"
+            },
+            {
+              "@type": "Thing",
+              "name": "Name translation",
+              "sameAs": "https://en.wikipedia.org/wiki/Transcription_(linguistics)"
+            }
+          ]
         },
         {
           "@type": "AboutPage",
           "@id": "https://myjapanesenametranslator.com/about#webpage",
-          "url": "https://myjapanesenametranslator.com/about",
+          "url": "https://myjapanesenametranslator.com/about.html",
           "name": "About Us | My Japanese Name Translator",
           "description": "Learn about My Japanese Name Translator, founded by Daniel Sato, a Japanese linguistics expert specializing in accurate English-to-Japanese name conversion.",
           "isPartOf": {
-            "@type": "WebSite",
-            "@id": "https://myjapanesenametranslator.com/#website",
-            "url": "https://myjapanesenametranslator.com/",
-            "name": "My Japanese Name Translator"
+            "@id": "https://myjapanesenametranslator.com/#website"
           },
           "inLanguage": "en",
+          "author": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          },
           "publisher": { "@id": "https://myjapanesenametranslator.com/#organization" },
           "datePublished": "2026-01-01",
-          "dateModified": "2026-02-05"
+          "dateModified": "2026-02-06",
+          "breadcrumb": {
+            "@id": "https://myjapanesenametranslator.com/about#breadcrumb"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://myjapanesenametranslator.com/about#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://myjapanesenametranslator.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About",
+              "item": "https://myjapanesenametranslator.com/about.html"
+            }
+          ]
         }
       ]
     }

@@ -7,6 +7,9 @@
     <meta name="description" content="Free Japanese name converter tool. Instantly convert your English name to authentic Katakana (カタカナ), Hiragana (ひらがな), and Kanji (漢字) with pronunciation guides and cultural meanings.">
     <link rel="canonical" href="https://myjapanesenametranslator.com/">
     <meta name="robots" content="index, follow">
+    <meta name="author" content="Daniel Sato">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://myjapanesenametranslator.com data:; connect-src 'self' https://www.google-analytics.com;">
     <link rel="apple-touch-icon" href="https://myjapanesenametranslator.com/Favicon-My-Japanese-Name-Translator.png">
     
     <!-- Open Graph -->
@@ -16,6 +19,7 @@
     <meta property="og:description" content="Free Japanese name converter tool. Instantly convert your English name to authentic Katakana, Hiragana, and Kanji with pronunciation guides and cultural meanings.">
     <meta property="og:image" content="https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png">
     <meta property="og:site_name" content="My Japanese Name Translator">
+    <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -44,6 +48,25 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 1rem;
+            background: var(--vermillion);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0 0 8px 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 10000;
+            text-decoration: none;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
 
         body {
             font-family: 'DM Sans', sans-serif;
@@ -116,7 +139,22 @@
             letter-spacing: 0.02em;
         }
 
-        .header-nav a:hover { color: var(--paper); }
+        .header-nav a:hover,
+        .header-nav a[aria-current="page"] { color: var(--paper); }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--mist);
+        }
+
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+        }
 
         /* === HERO === */
         .hero {
@@ -222,6 +260,7 @@
         }
 
         .converter-label {
+            display: block;
             font-size: 0.78rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -280,6 +319,21 @@
         }
 
         .convert-btn:active { transform: translateY(0); }
+
+        /* Focus-visible styles for accessibility */
+        .convert-btn:focus-visible,
+        .script-toggle:focus-visible,
+        .name-chip:focus-visible,
+        .action-btn:focus-visible,
+        .mobile-menu-btn:focus-visible {
+            outline: 2px solid var(--vermillion);
+            outline-offset: 2px;
+        }
+        .faq-q:focus-visible {
+            outline: 2px solid var(--vermillion);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
 
         .script-toggles {
             display: flex;
@@ -465,6 +519,7 @@
             border-radius: 10px;
             font-size: 0.88rem;
             font-weight: 500;
+            font-family: 'DM Sans', sans-serif;
             color: var(--ink);
             cursor: pointer;
             transition: all 0.2s;
@@ -662,6 +717,20 @@
 
         .footer-links a:hover { color: var(--paper); }
 
+        .footer-contact {
+            color: rgba(247,243,237,0.45);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact a {
+            color: rgba(247,243,237,0.6);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contact a:hover { color: var(--paper); }
+
         .footer-copy {
             color: rgba(247,243,237,0.25);
             font-size: 0.75rem;
@@ -692,8 +761,21 @@
             .about-card { padding: 2rem 1.5rem; }
             .hero { padding: 3.5rem 1.5rem 5rem; }
             .site-header { padding: 0.75rem 1rem; }
-            .header-nav { gap: 1rem; }
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--ink);
+                flex-direction: column;
+                padding: 1rem 1.5rem;
+                gap: 0.75rem;
+                border-top: 1px solid rgba(255,255,255,0.08);
+            }
             .header-nav a { font-size: 0.78rem; }
+            .header-nav.open { display: flex; }
+            .mobile-menu-btn { display: block; }
         }
     </style>
 <script type="application/ld+json">
@@ -708,6 +790,24 @@
       "logo": {
         "@type": "ImageObject",
         "url": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Daniel Sato",
+        "jobTitle": "Japanese Linguistics Expert & Name Translation Specialist"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@myjapanesenametranslator.com",
+        "contactType": "customer support",
+        "availableLanguage": ["English", "Japanese"],
+        "areaServed": "Worldwide"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Stockton",
+        "addressRegion": "CA",
+        "addressCountry": "US"
       }
     },
     {
@@ -727,6 +827,8 @@
       "description": "Free Japanese name converter tool. Instantly convert your English name to authentic Katakana, Hiragana, and Kanji with pronunciation guides and cultural meanings.",
       "isPartOf": { "@id": "https://myjapanesenametranslator.com/#website" },
       "inLanguage": "en",
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-02-05",
       "about": [
         {
           "@type": "Thing",
@@ -871,42 +973,50 @@
 </head>
 <body>
 
+    <!-- SKIP LINK -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- HEADER -->
-    <header class="site-header">
-        <a href="#" class="logo">
-            <img src="https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png" alt="My Japanese Name Translator Logo" class="logo-img">
+    <header class="site-header" role="banner">
+        <a href="/" class="logo" aria-label="My Japanese Name Translator - Home">
+            <img src="https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png" alt="My Japanese Name Translator Logo" class="logo-img" width="132" height="44">
         </a>
-        <nav class="header-nav">
-            <a href="#converter">Convert</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#faq">FAQ</a>
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <nav class="header-nav" role="navigation" aria-label="Main navigation">
+            <a href="/" aria-current="page">Home</a>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/contact">Contact</a>
         </nav>
     </header>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-kanji k1">名</div>
-        <div class="hero-kanji k2">前</div>
-        <div class="hero-kanji k3">変</div>
-        <div class="hero-kanji k4">換</div>
+        <div class="hero-kanji k1" aria-hidden="true">名</div>
+        <div class="hero-kanji k2" aria-hidden="true">前</div>
+        <div class="hero-kanji k3" aria-hidden="true">変</div>
+        <div class="hero-kanji k4" aria-hidden="true">換</div>
         <div class="hero-content">
-            <div class="hero-badge animate-in delay-1">Free Name Converter</div>
-            <h1 class="animate-in delay-2">
-                Japanese Name Translator
-                <span class="jp-text">あなたの名前を日本語に変換</span>
-            </h1>
+            <div class="hero-badge animate-in delay-1">My Japanese Name Translator</div>
+            <h1 class="animate-in delay-2">Japanese Name Translator</h1>
             <p class="animate-in delay-3">
-    Convert your English name into Katakana Hiragana, or Kanji with pronunciation and cultural context.
+    Convert your English name into Katakana, Hiragana, or Kanji with pronunciation and cultural context.
 </p>
 
         </div>
     </section>
 
+    <!-- MAIN CONTENT -->
+    <main id="main-content" role="main">
+
     <!-- CONVERTER -->
     <section class="converter-section animate-in delay-4" id="converter">
         <div class="converter-card">
             <div class="converter-inner">
-                <div class="converter-label">Enter Your Name in English</div>
+                <label for="nameInput" class="converter-label">Enter Your Name in English</label>
                 <div class="input-row">
                     <input type="text" class="name-input" id="nameInput" placeholder="e.g. Alexander, Emma, Sakura..." autocomplete="off" autofocus>
                     <button class="convert-btn" id="convertBtn" onclick="convertName()">
@@ -914,14 +1024,14 @@
                     </button>
                 </div>
                 <div class="script-toggles">
-                    <button class="script-toggle active" data-script="katakana">Katakana <span class="jp">カタカナ</span></button>
-                    <button class="script-toggle active" data-script="hiragana">Hiragana <span class="jp">ひらがな</span></button>
-                    <button class="script-toggle active" data-script="kanji">Kanji <span class="jp">漢字</span></button>
-                    <button class="script-toggle active" data-script="romaji">Romaji</button>
+                    <button class="script-toggle active" data-script="katakana" aria-pressed="true">Katakana <span class="jp">カタカナ</span></button>
+                    <button class="script-toggle active" data-script="hiragana" aria-pressed="true">Hiragana <span class="jp">ひらがな</span></button>
+                    <button class="script-toggle active" data-script="kanji" aria-pressed="true">Kanji <span class="jp">漢字</span></button>
+                    <button class="script-toggle active" data-script="romaji" aria-pressed="true">Romaji</button>
                 </div>
 
                 <!-- RESULTS -->
-                <div class="results-area" id="resultsArea">
+                <div class="results-area" id="resultsArea" aria-live="polite" aria-atomic="false">
                     <div class="result-block" id="resultKatakana">
                         <div>
                             <div class="result-script-label">Katakana · カタカナ</div>
@@ -929,7 +1039,7 @@
                             <div class="result-romaji" id="katakanaRomaji"></div>
                         </div>
                         <div class="result-actions">
-                            <button class="action-btn" title="Copy to clipboard" onclick="copyResult('katakanaOutput')">
+                            <button class="action-btn" aria-label="Copy Katakana to clipboard" onclick="copyResult('katakanaOutput')">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
                             </button>
                         </div>
@@ -941,7 +1051,7 @@
                             <div class="result-romaji" id="hiraganaRomaji"></div>
                         </div>
                         <div class="result-actions">
-                            <button class="action-btn" title="Copy to clipboard" onclick="copyResult('hiraganaOutput')">
+                            <button class="action-btn" aria-label="Copy Hiragana to clipboard" onclick="copyResult('hiraganaOutput')">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
                             </button>
                         </div>
@@ -953,7 +1063,7 @@
                             <div class="result-romaji" id="kanjiRomaji"></div>
                         </div>
                         <div class="result-actions">
-                            <button class="action-btn" title="Copy to clipboard" onclick="copyResult('kanjiOutput')">
+                            <button class="action-btn" aria-label="Copy Kanji to clipboard" onclick="copyResult('kanjiOutput')">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
                             </button>
                         </div>
@@ -964,7 +1074,7 @@
                             <div class="result-japanese" id="romajiOutput" style="font-family:'DM Sans',sans-serif; font-size:1.6rem;"></div>
                         </div>
                         <div class="result-actions">
-                            <button class="action-btn" title="Copy to clipboard" onclick="copyResult('romajiOutput')">
+                            <button class="action-btn" aria-label="Copy Romaji to clipboard" onclick="copyResult('romajiOutput')">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
                             </button>
                         </div>
@@ -975,7 +1085,8 @@
     </section>
 
     <!-- POPULAR NAMES -->
-    <section class="popular-section">
+    <section class="popular-section" aria-label="Popular name conversions">
+        <h2 style="font-family:'Playfair Display',serif; font-weight:700; font-size:1.4rem; text-align:center; margin-bottom:1.5rem;">Popular Japanese Name Conversions</h2>
         <!-- Female Names -->
         <div class="popular-group">
             <div class="popular-header">
@@ -1010,19 +1121,19 @@
             <h3>Japanese Writing Systems Explained</h3>
             <div class="writing-systems">
                 <div class="ws-card">
-                    <div class="ws-char">ア</div>
+                    <div class="ws-char" aria-hidden="true">ア</div>
                     <div class="ws-name">Katakana</div>
                     <div class="ws-jp">カタカナ</div>
                     <div class="ws-desc">Angular script for foreign names, loanwords & emphasis. The standard way to write non-Japanese names.</div>
                 </div>
                 <div class="ws-card">
-                    <div class="ws-char">あ</div>
+                    <div class="ws-char" aria-hidden="true">あ</div>
                     <div class="ws-name">Hiragana</div>
                     <div class="ws-jp">ひらがな</div>
                     <div class="ws-desc">Curved, flowing script for native Japanese words, grammar particles, and furigana pronunciation guides.</div>
                 </div>
                 <div class="ws-card">
-                    <div class="ws-char">名</div>
+                    <div class="ws-char" aria-hidden="true">名</div>
                     <div class="ws-name">Kanji</div>
                     <div class="ws-jp">漢字</div>
                     <div class="ws-desc">Logographic characters from Chinese. Each carries meaning — used for Japanese names and core vocabulary.</div>
@@ -1044,45 +1155,52 @@
         <h2>Frequently Asked Questions</h2>
 
         <div class="faq-item open">
-            <div class="faq-q" onclick="toggleFaq(this)">How do I write my name in Japanese?</div>
-            <div class="faq-a">Foreign names are written in Katakana in Japan. Enter your name in our converter above, and you'll receive your name in Katakana, Hiragana, and Kanji. Katakana is the officially recognized script for foreign names in Japanese documents, passports, and official records.</div>
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="true" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">How do I write my name in Japanese?</div>
+            <div class="faq-a" id="faq-a-1">Foreign names are written in Katakana in Japan. Enter your name in our converter above, and you'll receive your name in Katakana, Hiragana, and Kanji. Katakana is the officially recognized script for foreign names in Japanese documents, passports, and official records.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">What is the difference between Katakana, Hiragana, and Kanji?</div>
-            <div class="faq-a">Katakana (カタカナ) uses angular strokes and is for foreign words and names. Hiragana (ひらがな) uses curved strokes for native Japanese words and grammar. Kanji (漢字) are logographic characters from Chinese, each representing a meaning. For foreign names, Katakana is the standard and most appropriate choice.</div>
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">What is the difference between Katakana, Hiragana, and Kanji?</div>
+            <div class="faq-a" aria-hidden="true">Katakana (カタカナ) uses angular strokes and is for foreign words and names. Hiragana (ひらがな) uses curved strokes for native Japanese words and grammar. Kanji (漢字) are logographic characters from Chinese, each representing a meaning. For foreign names, Katakana is the standard and most appropriate choice.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">Is this Japanese name converter accurate?</div>
-            <div class="faq-a">Our converter uses standard phonetic transliteration rules based on Hepburn romanization, the most widely used system in Japan. For common English names, we use a verified database of established conversions. For less common names, our algorithm applies Japanese phonetic mapping rules to produce the closest natural-sounding equivalent.</div>
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Is this Japanese name converter accurate?</div>
+            <div class="faq-a" aria-hidden="true">Our converter uses standard phonetic transliteration rules based on Hepburn romanization, the most widely used system in Japan. For common English names, we use a verified database of established conversions. For less common names, our algorithm applies Japanese phonetic mapping rules to produce the closest natural-sounding equivalent.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">Can I use the Kanji version for a tattoo?</div>
-            <div class="faq-a">The Kanji output uses ateji — characters chosen for sound rather than meaning. While visually striking, we recommend consulting a native Japanese speaker or professional calligrapher before getting a permanent kanji tattoo, to ensure the character combination is appropriate and culturally respectful. Katakana is always a safe and authentic choice for foreign name tattoos.</div>
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Can I use the Kanji version for a tattoo?</div>
+            <div class="faq-a" aria-hidden="true">The Kanji output uses ateji — characters chosen for sound rather than meaning. While visually striking, we recommend consulting a native Japanese speaker or professional calligrapher before getting a permanent kanji tattoo, to ensure the character combination is appropriate and culturally respectful. Katakana is always a safe and authentic choice for foreign name tattoos.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">Does this work for names from other languages?</div>
-            <div class="faq-a">Yes! Our tool works as an English to Japanese name converter, and can also handle names from Spanish, French, German, Korean, Chinese, and other languages that use the Latin alphabet. The converter analyzes the phonetic structure of your name regardless of its origin language.</div>
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Does this work for names from other languages?</div>
+            <div class="faq-a" aria-hidden="true">Yes! Our tool works as an English to Japanese name converter, and can also handle names from Spanish, French, German, Korean, Chinese, and other languages that use the Latin alphabet. The converter analyzes the phonetic structure of your name regardless of its origin language.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">Why does my name sound different in Japanese?</div>
-            <div class="faq-a">Japanese phonetics don't include certain English sounds. There is no "L" sound (it becomes "R"), no "V" (becomes "B"), and most syllables must end in a vowel or "n." Consonant clusters are separated with vowels. This is why "Clark" becomes クラーク (Ku-rā-ku) — each consonant gets a vowel companion to fit Japanese mora structure.</div>
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Why does my name sound different in Japanese?</div>
+            <div class="faq-a" aria-hidden="true">Japanese phonetics don't include certain English sounds. There is no "L" sound (it becomes "R"), no "V" (becomes "B"), and most syllables must end in a vowel or "n." Consonant clusters are separated with vowels. This is why "Clark" becomes クラーク (Ku-rā-ku) — each consonant gets a vowel companion to fit Japanese mora structure.</div>
         </div>
     </section>
 
+    </main>
+
     <!-- FOOTER -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="footer-brand">My Japanese Name Translator</div>
-        <div class="footer-tagline">あなたの名前を日本語に · Your name in Japanese</div>
-        <div class="footer-links">
-            <a href="#converter">Name Converter</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#faq">FAQ</a>
+        <div class="footer-tagline">Translate Your Name in Japanese</div>
+        <nav class="footer-links" aria-label="Footer navigation">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/contact">Contact</a>
+        </nav>
+        <div class="footer-contact">
+            <a href="mailto:contact@myjapanesenametranslator.com">contact@myjapanesenametranslator.com</a>
         </div>
-        <div class="footer-copy">© 2026 My Japanese Name Translator. Free online tool for converting English names to Katakana, Hiragana & Kanji.</div>
+        <div class="footer-copy">© 2026 My Japanese Name Translator. All rights reserved.</div>
     </footer>
 
     <!-- COPIED TOAST -->
-    <div class="copied-toast" id="copiedToast">✓ Copied to clipboard</div>
+    <div class="copied-toast" id="copiedToast" role="status" aria-live="polite">✓ Copied to clipboard</div>
 
     <script>
     // ========================================
@@ -1359,17 +1477,33 @@
     // Copy to clipboard
     function copyResult(elementId) {
         const text = document.getElementById(elementId).textContent;
-        navigator.clipboard.writeText(text).then(() => {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(showCopiedToast).catch(fallbackCopy);
+        } else {
+            fallbackCopy();
+        }
+        function fallbackCopy() {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); showCopiedToast(); } catch(e) { /* silent */ }
+            document.body.removeChild(ta);
+        }
+        function showCopiedToast() {
             const toast = document.getElementById('copiedToast');
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 1500);
-        });
+        }
     }
 
     // Script toggle handling
     document.querySelectorAll('.script-toggle').forEach(btn => {
         btn.addEventListener('click', () => {
             btn.classList.toggle('active');
+            btn.setAttribute('aria-pressed', btn.classList.contains('active'));
             updateResultVisibility();
         });
     });
@@ -1396,7 +1530,11 @@
 
     // FAQ toggle
     function toggleFaq(el) {
-        el.parentElement.classList.toggle('open');
+        const item = el.parentElement;
+        const isOpen = item.classList.toggle('open');
+        el.setAttribute('aria-expanded', isOpen);
+        const answer = el.nextElementSibling;
+        if (answer) answer.setAttribute('aria-hidden', !isOpen);
     }
 
     // Populate popular names - Female
@@ -1423,31 +1561,37 @@
         { en: 'Benjamin', jp: 'ベンジャミン' },
     ];
 
-    const femaleNamesGrid = document.getElementById('popularFemaleNames');
-    popularFemaleNames.forEach(n => {
+    // Mobile navigation toggle
+    function toggleMobileNav() {
+        const nav = document.querySelector('.header-nav');
+        const btn = document.querySelector('.mobile-menu-btn');
+        const isOpen = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen);
+    }
+
+    // Populate popular name chips
+    function createNameChip(name, grid) {
         const chip = document.createElement('button');
         chip.className = 'name-chip';
-        chip.innerHTML = `${n.en}<span class="chip-jp">${n.jp}</span>`;
-        chip.onclick = () => {
-            document.getElementById('nameInput').value = n.en;
+        chip.setAttribute('aria-label', name.en + ' — ' + name.jp);
+        chip.textContent = name.en;
+        const jpSpan = document.createElement('span');
+        jpSpan.className = 'chip-jp';
+        jpSpan.textContent = name.jp;
+        chip.appendChild(jpSpan);
+        chip.addEventListener('click', () => {
+            document.getElementById('nameInput').value = name.en;
             convertName();
             document.getElementById('converter').scrollIntoView({ behavior: 'smooth' });
-        };
-        femaleNamesGrid.appendChild(chip);
-    });
+        });
+        grid.appendChild(chip);
+    }
+
+    const femaleNamesGrid = document.getElementById('popularFemaleNames');
+    popularFemaleNames.forEach(n => createNameChip(n, femaleNamesGrid));
 
     const maleNamesGrid = document.getElementById('popularMaleNames');
-    popularMaleNames.forEach(n => {
-        const chip = document.createElement('button');
-        chip.className = 'name-chip';
-        chip.innerHTML = `${n.en}<span class="chip-jp">${n.jp}</span>`;
-        chip.onclick = () => {
-            document.getElementById('nameInput').value = n.en;
-            convertName();
-            document.getElementById('converter').scrollIntoView({ behavior: 'smooth' });
-        };
-        maleNamesGrid.appendChild(chip);
-    });
+    popularMaleNames.forEach(n => createNameChip(n, maleNamesGrid));
     </script>
 </body>
 </html>

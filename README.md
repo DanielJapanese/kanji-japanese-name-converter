@@ -1,6 +1,6 @@
 # My Japanese Name Translator
 
-> **Convert your English name into authentic Japanese names using kanji, romaji, and cultural context**
+> **Free online tool to instantly convert your English name to authentic Katakana, Hiragana, Kanji & Romaji with pronunciation guides and cultural meanings**
 
 🌐 **Website**: [myjapanesenametranslator.com](https://myjapanesenametranslator.com)
 
@@ -8,150 +8,120 @@
 
 ## 🎌 What We Do
 
-My Japanese Name Translator is a comprehensive platform for converting English names into culturally accurate and linguistically meaningful Japanese names. We combine:
+My Japanese Name Translator is a free online tool for instantly converting English names into Japanese using four writing systems — **Katakana (カタカナ)**, **Hiragana (ひらがな)**, **Kanji (漢字)**, and **Romaji**. We use phonetic transliteration based on standard Hepburn romanization rules to produce natural-sounding, culturally appropriate Japanese name equivalents.
 
-- **Kanji Character Analysis** - Selecting appropriate kanji based on phonetics and meaning
-- **Romaji Transliteration** - Accurate representation using standardized romaji systems
-- **Cultural Context** - Respecting Japanese naming conventions and traditions
-- **Semantic Meaning** - Preserving or enhancing name significance in Japanese
-- **Multiple Options** - Providing various interpretations to match personal preferences
+- **Katakana Conversion** - The standard Japanese script for foreign names, used on official documents and passports
+- **Hiragana Rendering** - Soft, flowing script representation for a traditional Japanese feel
+- **Kanji (Ateji) Translation** - Characters selected for their phonetic readings, visually striking and meaningful
+- **Romaji Output** - Accurate romanized spelling using Hepburn romanization
 
 ## 🔧 Core Features
 
 ### English to Japanese Name Conversion
-Transform English names into natural Japanese equivalents with:
-- Phonetically accurate kanji combinations
-- Culturally appropriate character selections
-- Meaningful semantic interpretations
-- Standard romaji representations
-- Detailed explanations of each conversion choice
+Convert English names into all four Japanese writing systems with:
+- Instant, real-time conversion in your browser
+- Curated database of common English name translations
+- Phonetic mapping algorithm for uncommon names
+- Copy-to-clipboard functionality for each result
+- Script toggle buttons to show/hide individual writing systems
 
-### Comprehensive Name Analysis
-- **Kanji Meanings**: Understanding the significance of each character
-- **Cultural Appropriateness**: Ensuring names fit Japanese conventions
-- **Gender Considerations**: Selecting kanji that align with traditional gender associations
-- **Pronunciation Guide**: Clear romaji and phonetic instructions
-- **Name Variations**: Multiple options for personalization
+### How the Converter Works
+Our tool uses phonetic transliteration to map each English syllable to its closest Japanese phonetic equivalent:
+1. **Name Input** — Enter your English name
+2. **Database Lookup** — Check against our curated common name database
+3. **Phonetic Mapping** — Apply Hepburn romanization rules to convert pronunciation
+4. **Script Generation** — Produce Katakana, Hiragana, Kanji (ateji), and Romaji output
+5. **Display Results** — Show all four writing systems with copy buttons
 
-### Educational Resources
-Learn about:
-- Japanese writing systems (kanji, hiragana, katakana, romaji)
-- Japanese naming traditions and conventions
-- The cultural significance of name meanings
-- How to choose appropriate kanji for your name
-- Proper pronunciation of Japanese names
+### Popular Name Conversions
+The tool includes a curated database of pre-verified translations for popular English names (both male and female), ensuring the highest accuracy for common names. Users can click any popular name to instantly see its Japanese conversion.
 
-## 🌟 Why Accurate Japanese Name Translation Matters
-
-Japanese names carry deep cultural and linguistic significance. Each kanji character contributes:
-- **Phonetic sound** - How the name is pronounced
-- **Semantic meaning** - What the name represents
-- **Cultural resonance** - How it fits within Japanese tradition
-- **Personal identity** - Connection to Japanese culture and language
-
-Our tools ensure your Japanese name is both linguistically accurate and culturally respectful.
-
-## 🎯 Who Uses Our Tools
-
-- **Travelers to Japan** - Need proper Japanese name representations
-- **Japanese Language Learners** - Want to understand name conversion
-- **Cultural Enthusiasts** - Interested in Japanese naming traditions
-- **Content Creators** - Developing characters with authentic Japanese names
-- **Business Professionals** - Requiring accurate Japanese name cards
-- **Students** - Learning about cross-cultural linguistics
-- **Anyone** curious about their name in Japanese
-
-## 📖 Japanese Name Conversion Process
-
-1. **Name Input** - Enter your English name
-2. **Phonetic Analysis** - Break down pronunciation into Japanese sounds
-3. **Kanji Selection** - Choose characters matching sound and meaning
-4. **Cultural Validation** - Ensure appropriateness within Japanese conventions
-5. **Romaji Generation** - Create standardized romanized spelling
-6. **Meaning Explanation** - Describe significance of chosen kanji
-7. **Alternative Options** - Provide variations for personalization
+### Educational Content
+The site includes detailed explanations of:
+- Japanese writing systems (Katakana, Hiragana, Kanji) and their uses
+- Japanese phonetics and mora-based syllable structure
+- How foreign names are adapted to Japanese sounds (e.g., "L" → "R", "V" → "B")
+- Common uses for Japanese names (tattoos, hanko seals, business cards, gaming)
+- Japanese honorific suffixes (-san, -chan, -kun, -sama)
 
 ## 🔍 Key Japanese Name Elements
 
+### Katakana (カタカナ)
+Angular script used for foreign names, loanwords, and emphasis. This is the **standard and officially recognized** way to write non-Japanese names in Japan — used on passports, official documents, and business cards.
+
+### Hiragana (ひらがな)
+Curved, flowing script for native Japanese words, grammar particles, and furigana pronunciation guides. Provides a softer, more traditional feel for name representations.
+
 ### Kanji (漢字)
-Chinese characters used in Japanese writing, each with:
-- Multiple readings (on'yomi and kun'yomi)
-- Distinct meanings
-- Varying stroke counts
-- Cultural associations
+Logographic characters from Chinese, each carrying meaning. Our tool uses **ateji** — kanji characters selected for their phonetic readings rather than semantic meaning — to create visually striking name representations.
 
 ### Romaji (ローマ字)
-Romanization of Japanese using Latin alphabet:
-- Hepburn system (most common)
-- Kunrei-shiki system
-- Nihon-shiki system
-
-### Name Structure
-Japanese names typically follow:
-- **Family name first** (surname)
-- **Given name second** (first name)
-- Cultural conventions for gender and formality
-
-## 🌸 Cultural Accuracy Standards
-
-We maintain high standards for:
-- **Linguistic Precision** - Accurate phonetic mapping
-- **Cultural Sensitivity** - Respecting Japanese traditions
-- **Semantic Appropriateness** - Meaningful kanji selections
-- **Gender Conventions** - Following traditional associations
-- **Pronunciation Clarity** - Clear guidance on correct usage
+Romanization of Japanese using the Latin alphabet. We use the **Hepburn system**, the most widely recognized romanization standard used in Japan.
 
 ## 🚀 Technical Approach
 
-Our name conversion methodology incorporates:
-- Japanese phonology and syllable structure
-- Comprehensive kanji databases
-- Cultural naming pattern analysis
-- Linguistic best practices
-- User preference customization
+Our name conversion runs entirely **client-side in your browser** — no names are sent to any server. The technical methodology includes:
 
-## 📚 Educational Focus
+- **Hepburn romanization** — The internationally recognized standard for Japanese transliteration
+- **Phoneme-to-Katakana mapping** — Comprehensive mapping table covering standard and extended katakana
+- **Common name database** — Pre-verified translations for 50+ popular English names
+- **Katakana-to-Hiragana conversion** — Unicode-based character offset conversion
+- **Ateji kanji mapping** — Phonetic kanji character selection for name rendering
+- **English phonetic rules** — Substitution rules for sounds not native to Japanese (th → s, ph → f, l → r, v → b, etc.)
 
-Learn about:
-- **Japanese Language Basics** - Writing systems and structure
-- **Kanji Meanings** - Understanding character significance
-- **Cultural Context** - Japanese naming traditions
-- **Pronunciation** - Proper Japanese phonetics
-- **Name History** - Evolution of Japanese naming practices
+## 🌟 Why Accurate Japanese Name Translation Matters
 
-## 🌐 Resources
+Japanese names carry deep cultural and linguistic significance. An inaccurate or inappropriate translation can cause misunderstanding or unintended offense. Our tool ensures translations are:
+- **Phonetically precise** — Following standard Hepburn romanization
+- **Culturally appropriate** — Respecting Japanese naming conventions
+- **Clearly explained** — Providing romaji pronunciation for every result
+- **Safely recommended** — Noting that Katakana is always the safest choice for foreign names
 
-- [Complete Name Conversion Tool](https://myjapanesenametranslator.com)
-- [Kanji Meaning Database](https://myjapanesenametranslator.com/kanji)
-- [Japanese Name Guide](https://myjapanesenametranslator.com/guide)
-- [Romaji Converter](https://myjapanesenametranslator.com/romaji)
-- [Name Examples](https://myjapanesenametranslator.com/examples)
+## 🎯 Who Uses Our Tool
 
-## 🎓 About Japanese Names
+- **Travelers to Japan** — Need proper Japanese name for hotel registrations and restaurant reservations
+- **Tattoo enthusiasts** — Want authentic Japanese calligraphy for name tattoos
+- **Japanese language learners** — Want to understand name conversion and writing systems
+- **Gamers & social media users** — Creating Japanese usernames and profiles
+- **Business professionals** — Designing Japanese business cards (名刺, meishi)
+- **Hanko/Inkan makers** — Creating personal Japanese name seals
+- **Content creators** — Developing characters with authentic Japanese names
+- **Students** — Learning about cross-cultural linguistics
 
-Japanese names are rich with:
-- **Historical significance** - Connected to family heritage
-- **Seasonal references** - Nature and time-based meanings
-- **Virtues and qualities** - Positive characteristics
-- **Phonetic beauty** - Melodic sound patterns
-- **Written elegance** - Aesthetic kanji combinations
+## 📄 Site Pages
+
+- **[Home](https://myjapanesenametranslator.com)** — Name converter tool, popular names, how it works, FAQ
+- **[About Us](https://myjapanesenametranslator.com/about)** — Our mission, founder info, expertise
+- **[Privacy Policy](https://myjapanesenametranslator.com/privacy)** — GDPR & CCPA compliant, cookie policy, data practices
+- **[Terms of Service](https://myjapanesenametranslator.com/terms)** — Usage terms, accuracy disclaimers, governing law
+- **[Contact Us](https://myjapanesenametranslator.com/contact)** — Contact form, email, location info
+
+## 🎓 About
+
+**Founded by Daniel Sato** — Japanese linguistics expert and name translation specialist, based in **Stockton, California, USA**.
+
+Daniel brings deep expertise in Japanese phonology, kanji semantics, and cross-cultural naming conventions to ensure every translation meets the highest standards of linguistic precision and cultural respect.
 
 ## 📞 Contact & Support
 
-- 🌐 Website: [myjapanesenametranslator.com](https://myjapanesenametranslator.com)
-- 📧 Email: [your-support-email]
-- 💬 Support: [Contact page URL]
+- 🌐 **Website**: [myjapanesenametranslator.com](https://myjapanesenametranslator.com)
+- 📧 **Email**: [contact@myjapanesenametranslator.com](mailto:contact@myjapanesenametranslator.com)
+- 💬 **Contact Page**: [myjapanesenametranslator.com/contact](https://myjapanesenametranslator.com/contact)
+- 📍 **Location**: Stockton, California, USA
+- ⏱️ **Response Time**: 24–48 hours
 
 ---
 
 ## 🔑 Keywords & Concepts
 
-Japanese name translator | English to Japanese name conversion | Kanji name generator | Romaji converter | Japanese name meaning | Cultural name translation | Accurate Japanese names | Japanese naming conventions | Name in Japanese | Japanese character meanings | Cross-cultural linguistics | Japanese language tools | Name transliteration | Authentic Japanese names | Japanese writing systems
+Japanese name translator | English to Japanese name conversion | Katakana name converter | Hiragana name converter | Kanji ateji name generator | Romaji converter | Hepburn romanization | Japanese name meaning | Cultural name translation | Accurate Japanese names | Japanese naming conventions | Name in Japanese | Japanese character meanings | Cross-cultural linguistics | Japanese language tools | Name transliteration | Authentic Japanese names | Japanese writing systems | Free Japanese name tool
 
 ---
 
 **Built with linguistic precision and cultural respect for accurate Japanese name translation.**
 
+© 2026 My Japanese Name Translator. All rights reserved.
+
 ---
 
-*My Japanese Name Translator - Connecting cultures through meaningful name conversion*
+*My Japanese Name Translator — Connecting cultures through meaningful name conversion*
